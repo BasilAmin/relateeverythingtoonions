@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RelateEverythingToThePriceOfOnions.net — Allium Market Intelligence Terminal</title>
+<meta name="description" content="Every input you provide, correlated to the current market price of onions using rigorous, deadpan, entirely fictitious logic.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ticker -->
+  <div class="ticker" role="marquee" aria-label="Allium market ticker">
+    <div class="ticker__track" id="tickerTrack"></div>
+  </div>
+
+  <div class="wrap">
+
+    <header class="hdr">
+      <div class="hdr__eyebrow">ALLIUM MARKET INTELLIGENCE — DIVISION OF GLOBAL CORRELATION ANALYTICS<span class="hdr__fake">*</span></div>
+      <h1 class="hdr__title">
+        RELATE&nbsp;EVERYTHING<br>
+        TO&nbsp;THE&nbsp;PRICE&nbsp;OF&nbsp;ONIONS<span class="cursor">_</span>
+      </h1>
+      <p class="hdr__sub">Submit any input. Our terminal will locate its causal relationship to the onion market. There is always a relationship.</p>
+      <p class="hdr__fakenote"><span class="hdr__fake">*</span> not a real division. not real analytics. read the disclaimer at the bottom.</p>
+    </header>
+
+    <main>
+      <form id="queryForm" class="terminal" autocomplete="off">
+        <div class="terminal__bar">
+          <span class="terminal__dot"></span>
+          <span class="terminal__dot"></span>
+          <span class="terminal__dot"></span>
+          <span class="terminal__label">allium-terminal — analyst session</span>
+        </div>
+        <div class="terminal__body">
+          <label for="queryInput" class="terminal__prompt">ANALYST&gt;</label>
+          <input
+            id="queryInput"
+            name="queryInput"
+            class="terminal__input"
+            type="text"
+            placeholder="type literally anything — a word, a memory, a tax form, the concept of Tuesday…"
+            required
+            maxlength="400"
+          >
+          <button type="submit" id="runBtn" class="terminal__run">RUN ANALYSIS</button>
+        </div>
+      </form>
+
+      <section id="reportWrap" class="report-wrap" aria-live="polite"></section>
+
+      <template id="reportTemplate">
+        <article class="report">
+          <div class="report__perf"></div>
+          <div class="report__head">
+            <span>QUERY</span><span class="report__query"></span>
+            <span>TIMESTAMP</span><span class="report__timestamp"></span>
+          </div>
+          <div class="report__grid">
+            <div class="report__field">
+              <span class="report__field-label">CORRELATION</span>
+              <span class="report__field-value report__correlation">—</span>
+            </div>
+            <div class="report__field">
+              <span class="report__field-label">CONFIDENCE</span>
+              <span class="report__field-value report__confidence">—</span>
+            </div>
+            <div class="report__field report__field--wide">
+              <span class="report__field-label">VERDICT</span>
+              <span class="report__field-value report__verdict">—</span>
+            </div>
+          </div>
+          <div class="report__analysis-label">ANALYSIS</div>
+          <p class="report__analysis"></p>
+          <div class="report__perf report__perf--bottom"></div>
+        </article>
+      </template>
+
+      <p class="empty-hint" id="emptyHint">No analyses run yet. The onion market is waiting.</p>
+    </main>
+
+    <footer class="ftr">
+      <p><strong>How the price is set:</strong> the terminal starts from a reference benchmark of <span id="benchmarkPrice"></span>, drifts it a few cents for atmosphere, and hands it to the language model as context. It is not a live commodities feed. Edit <code>ONION_PRICE_REFERENCE</code> in <code>server.js</code> and <code>CONFIG.ONION_PRICE_REFERENCE</code> in <code>script.js</code> to update the benchmark, or wire in a real commodities API if you want it to be true.</p>
+      <p><strong>Disclaimer:</strong> this site is a comedy toy. The "correlations," "confidence levels," and "verdicts" are fabricated by a language model for entertainment and have no relationship to actual onion futures, agricultural economics, or your life choices. Do not trade onions, or anything else, based on this website.</p>
+      <p class="ftr__credit">RelateEverythingToThePriceOfOnions — built for one very specific joke.</p>
+    </footer>
+
+  </div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
