@@ -1,7 +1,6 @@
 # RelateEverythingToThePriceOfOnions
 
-A one-joke website: type anything and the terminal returns a deadpan, fabricated financial analysis relating it to the price of onions.
-
+I just built this to piss someone off
 This version is set up as a small full-stack Node app:
 
 - `index.html`, `style.css`, and `script.js` are the frontend.
